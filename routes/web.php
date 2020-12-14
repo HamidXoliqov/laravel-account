@@ -27,14 +27,14 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/dashboard','backend\AdminController@dashboard')->name('dashboard');
     Route::resource('/users','backend\UserController');
 	Route::resource('/account','backend\AccountController');
-	Route::get('/accountsearch', 'backend\AccountController@search')->name('accountsearch');
+	Route::get('/account-search', 'backend\AccountController@search')->name('account-search');
     Route::get('/account/status/{id}','backend\AccountController@status');
     Route::get('/account/contact/{id}','backend\AccountController@contact');
 	Route::resource('/phone','backend\PhoneController');
-	Route::get('/phonesearch', 'backend\PhoneController@search')->name('phonesearch');
+	Route::get('/phone-search', 'backend\PhoneController@search')->name('phone-search');
 	Route::resource('/email','backend\EmailController');
-	Route::get('/emailsearch', 'backend\EmailController@search')->name('emailsearch');
-	Route::get('/adminsearch', 'backend\AdminController@search')->name('adminsearch');
+	Route::get('/email-search', 'backend\EmailController@search')->name('email-search');
+	Route::get('/admin-search', 'backend\AdminController@search')->name('admin-search');
 	Route::get('/users/profile/{id}',['as'=> 'profile','uses'=>'backend\UserController@profile']);
 
 });

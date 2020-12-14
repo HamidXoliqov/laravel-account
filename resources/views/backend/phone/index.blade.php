@@ -22,7 +22,7 @@
                         <a href="{{route('phone.create')}}">Add</a>
                     </li>
                    <!-- Navbar Search-->
-                    <form class="d-none d-md-inline-block form-inline ml-auto" action="{{ route('phonesearch') }}" method="GET">
+                    <form class="d-none d-md-inline-block form-inline ml-auto" action="{{ route('phone-search') }}" method="GET">
                         <div class="input-group">
                             <input class="form-control" type="search" placeholder="Search for..." value="" name="q" autocomplete="off" />
                             <div class="input-group-append">

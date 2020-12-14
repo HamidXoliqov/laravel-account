@@ -34,6 +34,7 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/phonesearch', 'backend\PhoneController@search')->name('phonesearch');
 	Route::resource('/email','backend\EmailController');
 	Route::get('/emailsearch', 'backend\EmailController@search')->name('emailsearch');
+	Route::get('/adminsearch', 'backend\AdminController@search')->name('adminsearch');
 	Route::get('/users/profile/{id}',['as'=> 'profile','uses'=>'backend\UserController@profile']);
 
 });

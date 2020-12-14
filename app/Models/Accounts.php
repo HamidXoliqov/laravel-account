@@ -27,16 +27,16 @@ class Accounts extends Model
 
     public function getPhone($id)
     {
-        if (!empty(Phones::where(['account_id'=>$id])->get())) {
-            return Phones::where(['account_id'=>$id])->get();
+        if (!empty(Phones::where('account_id',$id)->get())) {
+            return Phones::where('account_id',$id)->get();
         }
         return "No number";
     }
 
     public function getEmail($id)
     {
-        if (!empty(Email::where(['account_id'=>$id])->get())) {
-            return Phones::where(['account_id'=>$id])->get();
+        if (!empty(Email::where('account_id',$id)->get())) {
+            return Email::where('account_id',$id)->get();
         }
         return "No number";
     }

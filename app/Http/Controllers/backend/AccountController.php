@@ -163,7 +163,6 @@ class AccountController extends Controller
         {
             $account->status = 1;
         }
-        dd($account->status);
         if($account->save()){
             echo json_encode('success');
         }
@@ -177,7 +176,7 @@ class AccountController extends Controller
         $query = Accounts::query();
         if (isset($_GET["q"]) && $_GET["q"]) {
             $key = $_GET["q"];    
-            $accounts = $query->where('name','like',$key)->orderBy('created_at', 'desc')->paginate(30);
+            $accounts = $query->where('name','LIKE','%'.$key.'%')->orderBy('created_at', 'desc')->paginate(30);
             return view('backend.account.index',compact('accounts'));
         }
         $accounts = $query->paginate(30);

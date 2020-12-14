@@ -135,7 +135,7 @@ class PhoneController extends Controller
         $query = Phones::query();
         if (isset($_GET["q"]) && $_GET["q"]) {
             $key = $_GET["q"];    
-            $phones = $query->where('number','like',$key)->orderBy('created_at', 'desc')->paginate(30);
+            $phones = $query->where('number','LIKE','%'.$key.'%')->orderBy('created_at', 'desc')->paginate(30);
         return view('backend.phone.index',compact('phones'));
         }
         $phones = $query->paginate(30);

@@ -134,7 +134,7 @@ class EmailController extends Controller
         $query = Email::query();
         if (isset($_GET["q"]) && $_GET["q"]) {
             $key = $_GET["q"];    
-            $emails = $query->where('email_name','like',$key)->orderBy('created_at', 'desc')->paginate(30);
+            $emails = $query->where('email_name','LIKE','%'.$key.'%')->orderBy('created_at', 'desc')->paginate(30);
             return view('backend.email.index',compact('emails'));
         }
         $emails = $query->paginate(30);

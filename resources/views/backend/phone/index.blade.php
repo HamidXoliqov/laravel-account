@@ -81,8 +81,8 @@
                                 </tbody>
                                 @else
                                     <div class="page-not">
-                                        <p align="center">                         
-                                            Bu bo'limda hali ma'lumot saqlanmagan !!!
+                                        <p align="center"> 
+                                            Item not found !!!
                                         </p>
                                     </div>
                                     @endif

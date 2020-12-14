@@ -81,4 +81,16 @@ class AdminController extends Controller
         $accounts = Accounts::orderBy('created_at', 'desc')->paginate(30);
         return view('backend.admin.dashboard',compact('accounts'));
     }
+    public function search()
+    {
+        $query = Accounts::query();
+        if (isset($_GET["q"]) && $_GET["q"]) {
+            $key = $_GET["q"];    
+            $accounts = $query->where('name','LIKE','%'.$key.'%')->orderBy('created_at', 'desc')->paginate(30);
+            return view('backend.admin.dashboard',compact('accounts'));
+        }
+        $accounts = $query->paginate(30);
+        return view('backend.admin.dashboard',compact('accounts'));
+
+    }
 }

@@ -11,7 +11,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Dashboard</li>
                 <!-- Navbar Search-->
-                    <form class="d-none d-md-inline-block form-inline ml-auto" action="{{ route('accountsearch') }}" method="GET">
+                    <form class="d-none d-md-inline-block form-inline ml-auto" action="{{ route('adminsearch') }}" method="GET">
                         <div class="input-group">
                             <input class="form-control" type="search" placeholder="Search for..." value="" name="q" autocomplete="off" />
                             <div class="input-group-append">
@@ -46,16 +46,18 @@
                                 <tr>
                                     <td>@php echo $i++ @endphp</td>
                                     <td>{{$value->name}}</td>
-                                    @foreach($value->getPhone($value->id) as $val)
-                                    <hr>
-                                        <td>{{$val->number}}</td>
-                                    </hr>
-                                     @endforeach
-                                     @foreach($value->getEmail($value->id) as $val)
-                                    <hr>
-                                        <td>{{$val->email_name}}</td>
-                                    </hr>
-                                     @endforeach
+                                    <td>
+                                        @foreach($value->getPhone($value->id) as $phone)
+                                            {{$phone->number}}
+                                            <br>
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach($value->getEmail($value->id) as $email)
+                                            {{$email->email_name}}
+                                            <br>
+                                        @endforeach
+                                    </td>
                                     <td>{{($value->status!=0)?'On':'Off'}}</td>
                                 </tr>
                                 @endforeach
@@ -63,7 +65,7 @@
                             @else
                                 <div class="page-not">
                                     <p align="center">                         
-                                        Bu bo'limda hali ma'lumot saqlanmagan !!!
+                                        Item not found !!!
                                     </p>
                                 </div>
                             @endif

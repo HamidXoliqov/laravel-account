@@ -59,7 +59,7 @@
                                             </td>               
                                             <td>
                                                 <div class="toggle btn btn-primary ios {{($value->status)?'':'off'}}" data-toggle="toggle" role="button" style="width: 61.0547px; height: 37.7344px;">
-                                                    <input class="status" type="checkbox" checked="" data-toggle="toggle" data-style="ios" data-id="{{$value->id}}" data-action="/account/status/{{$value->id}}">
+                                                    <input class="status" type="checkbox" checked="" data-toggle="toggle" data-style="ios" data-id="{{$value->id}}" data-action="account/status/{{$value->id}}">
                                                     <div class="toggle-group">
                                                         <label for="" class="btn btn-primary toggle-on">On</label>
                                                         <label for="" class="btn btn-light toggle-off">Off</label>
@@ -87,8 +87,8 @@
                                 </tbody>
                                 @else
                                     <div class="page-not">
-                                        <p align="center">                         
-                                            Bu bo'limda hali ma'lumot saqlanmagan !!!
+                                        <p align="center">   
+                                            Item not found !!!
                                         </p>
                                     </div>
                                     @endif
